@@ -31,6 +31,7 @@ class Pouch(object):
     EquipmentPerformance = int
     BundleActorNum = int
     BuyingPrice = int
+    CannotSell = bool
     HitPointRecover = int
     IsUsable = bool
     PouchCategory = ""

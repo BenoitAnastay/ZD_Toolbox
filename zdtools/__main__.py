@@ -79,10 +79,13 @@ def get_set_name(part1,part2):
 def print_equipment_performance(pouch,shifted_material = ""):
     icon = ''.join(["★" for _ in range(int(pouch.ArmorRank)-1)])
     materials_str = ""
+    sell_str = ""
+    if pouch.CannotSell is False:
+        sell_str = "{{R|"+str(pouch.SellingPrice)+"}}'"
     if pouch.ArmorNextRankActor_obj:
         materials_str = format_materials(pouch.ArmorNextRankActor_Material)
     print("|-")
-    print("| "+icon+" || "+str(pouch.EquipmentPerformance)+" || "+shifted_material+" || {{R|"+str(pouch.SellingPrice)+"}} || {{R|"+str(pouch.BuyingPrice)+"}}")
+    print("| "+icon+" || "+str(pouch.EquipmentPerformance)+" || "+shifted_material+" || "+sell_str+" || {{R|"+str(pouch.BuyingPrice)+"}}")
     if pouch.ArmorNextRankActor_obj:
         print_equipment_performance(pouch.ArmorNextRankActor_obj, materials_str)
 
