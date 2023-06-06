@@ -50,7 +50,7 @@ def print_part(part):
         print('{{quote|'+handle_tags(part.Caption.strip())+'|In-game description}}')
         print()
         #print("*'''Selling Price:''' {{R|"+str(part.SellingPrice)+"}}")
-        #print("*'''Buying Price:''' {{R|"+str(part.BuyingPrice)+"}}")
+        print("*'''Buying Price:''' {{R|"+str(part.BuyingPrice)+"}}")
         if part.ArmorEffectType != '':
             print("*'''Effect:''' "+part.ArmorEffectType_Name)
         print('''
@@ -59,7 +59,6 @@ def print_part(part):
         !Armor
         !Materials
         !Selling Price
-        !Buying Price
         ''')
         print_equipment_performance(part)
         print('|}')
@@ -81,11 +80,11 @@ def print_equipment_performance(pouch,shifted_material = ""):
     materials_str = ""
     sell_str = ""
     if pouch.CannotSell is False:
-        sell_str = "{{R|"+str(pouch.SellingPrice)+"}}'"
+        sell_str = "{{R|"+str(pouch.SellingPrice)+"}}"
     if pouch.ArmorNextRankActor_obj:
         materials_str = format_materials(pouch.ArmorNextRankActor_Material)
     print("|-")
-    print("| "+icon+" || "+str(pouch.EquipmentPerformance)+" || "+shifted_material+" || "+sell_str+" || {{R|"+str(pouch.BuyingPrice)+"}}")
+    print("| "+icon+" || "+str(pouch.EquipmentPerformance)+" || "+shifted_material+" || "+sell_str)
     if pouch.ArmorNextRankActor_obj:
         print_equipment_performance(pouch.ArmorNextRankActor_obj, materials_str)
 
