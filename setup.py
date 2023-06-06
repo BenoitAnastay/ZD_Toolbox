@@ -7,4 +7,5 @@ setup(
     author='Benoit Anastay',
     license='Apache',
     install_requires=['pyyaml','yamlloader'],
+    include_package_data=True 
 )

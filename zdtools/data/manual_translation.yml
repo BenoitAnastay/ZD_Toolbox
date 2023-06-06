@@ -1,0 +1,16 @@
+ClimbSpeedUpOnlyHorizontaly: |
+  Climb Speed Up Only Horizontaly
+NightGlow: |
+  Glow in Dark
+MaskAll: |
+  Less detected by all enemies
+MaskBokoblin: |
+  Less detected by Bokoblins
+MaskMoriblin: |
+  Less detected by Moriblins
+MaskLizalfos: |
+  Less detected by Lizalfos
+MaskLynel: |
+  Less detected by Lynels
+MaskHorablin: |
+  Less detected by Horablin

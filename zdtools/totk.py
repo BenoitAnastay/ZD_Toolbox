@@ -35,7 +35,7 @@ class Pouch(object):
     HitPointRecover = int
     IsUsable = bool
     PouchCategory = ""
-    PouchGetType: ""
+    PouchGetType = ""
     PouchSortKey: int
     PouchSpecialDeal = None
     PouchStockable = bool
@@ -72,7 +72,13 @@ class TOTK:
                 print(exc)
             except UnicodeDecodeError:
                 return
-    
+            
+    def load_manually_added(self):
+        path = os.path.dirname(os.path.realpath(__file__))+"/data/manual_translation.yml"
+        data = self.load_file(path)
+        if data != None:
+            self.translate_class['Static'].update(data)
+
     def load_simple_array(self, name):
         directory = self.get_translation_directory(name)
         for filename in os.listdir(directory):
@@ -100,6 +106,7 @@ class TOTK:
         match name:
             case "Static":
                 self.load_simple_array(name)
+                self.load_manually_added()
             case "Actor":
                 self.load_simple_array(name)
             case "Location":
