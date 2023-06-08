@@ -4,7 +4,7 @@ from yaml import CLoader as Loader, CDumper as Dumper
 import os
 import re
 import sys
-from difflib import SequenceMatcher
+
 
 class Actor(object):
     ActorName = None 

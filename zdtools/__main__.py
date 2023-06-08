@@ -1,5 +1,6 @@
 import sys
 import re
+from difflib import SequenceMatcher
 from zdtools import TOTK
 
 #Set Encoding
