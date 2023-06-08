@@ -24,22 +24,26 @@ class EnhancementMaterial(object):
         self.RowId = data['__RowId']
 
 class Pouch(object):
-    ArmorEffectType = "" 
-    ArmorNextRankActor = ""
+    BundleActorNum = int
+    ArmorEffectType = str 
+    ArmorNextRankActor = str
     ArmorNextRankActor_obj = None
-    ArmorRank = int 
+    ArmorRank = int
+    CureEffectLevel = int
+    CureEffectType = str
+    CureEffectiveTime = int
     EquipmentPerformance = int
     BundleActorNum = int
     BuyingPrice = int
     CannotSell = False
     HitPointRecover = int
     IsUsable = bool
-    PouchCategory = ""
-    PouchGetType = ""
+    PouchCategory = str
+    PouchGetType = str
     PouchSortKey: int
     PouchSpecialDeal = None
     PouchStockable = bool
-    PouchUseType = ""
+    PouchUseType = str
     SellingPrice = int
 
     def __init__(self, data):
